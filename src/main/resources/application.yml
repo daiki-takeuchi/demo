@@ -1,1 +1,24 @@
+spring:
+# THYMELEAF (ThymeleafAutoConfiguration)
+  thymeleaf:
+    enabled: true
+    cache: false
+# DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/sample_db?autoReconnect=true&useSSL=false
+    username: test_user
+    password: test_user
+    jmx-enabled: true
+# JPA (JpaBaseConfiguration, HibernateJpaAutoConfiguration)
+  jpa:
+    hibernate:
+      show-sql: true
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
+  data:
+    jpa:
+      repositories:
+        enabled: true
+
 logging.level.org.springframework: INFO
