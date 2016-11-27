@@ -6,7 +6,8 @@ spring:
 # DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost/sample_db?autoReconnect=true&useSSL=false
+#    url: jdbc:mysql://localhost/sample_db?autoReconnect=true&useSSL=false
+    url: jdbc:mysql://mydb.c2d6yuy7egrg.us-west-2.rds.amazonaws.com:3306/sample_db
     username: test_user
     password: test_user
     jmx-enabled: true
@@ -20,5 +21,5 @@ spring:
     jpa:
       repositories:
         enabled: true
-
+server.port: 5000
 logging.level.org.springframework: INFO
