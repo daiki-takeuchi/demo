@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+  <title>product</title>
+  <meta name="keywords" content="product_line" />
+  <meta name="description" content="product_line" />
+</head>
+<body>
+
+  <!-- container -->
+  <div class="container">
+
+    <div layout:fragment="partial1">
+    <!-- partial1 start -->
+    <div class="row">
+      <div class="col-md-12 well">
+        <h3>detail - contents</h3>
+
+        <table class="table" th:if="${product_line}" th:object="${product_line}">
+          <tbody>
+            <tr>
+              <th class="field-label col-xs-3 active">id</th>
+              <td class="col-md-9" th:text="*{id}">id</td>
+            </tr>
+            <tr>
+              <th class="field-label col-xs-3 active">productLine</th>
+              <td class="col-md-9" th:text="*{productLine}">productLine</td>
+            </tr>
+            <tr>
+              <th class="field-label col-xs-3 active">textDescription</th>
+              <td class="col-md-9" th:text="*{textDescription}">textDescription</td>
+            </tr>
+            <tr>
+              <th class="field-label col-xs-3 active">htmlDescription</th>
+              <td class="col-md-9" th:text="*{htmlDescription}">htmlDescription</td>
+            </tr>
+            <tr>
+              <th class="field-label col-xs-3 active">image</th>
+              <td class="col-md-9" th:text="*{image}">image</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+    <!-- partial1 end -->
+    </div>
+
+  </div>
+  <!-- container -->
+
+</body>
+</html>

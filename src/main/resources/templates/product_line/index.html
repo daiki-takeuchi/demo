@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+  <title>product</title>
+  <meta name="keywords" content="product" />
+  <meta name="description" content="product" />
+</head>
+<body>
+
+  <!-- container -->
+  <div class="container">
+
+    <div layout:fragment="partial1">
+    <!-- partial1 start -->
+    <div class="row">
+      <div class="col-md-12 well">
+        <h3>index - contents</h3>
+
+        <table class="table table-striped" th:if="${result}">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>product Line</th>
+              <th>text Description</th>
+              <th>html Description</th>
+              <th>image</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="product_line, status : ${result}" th:object="${product_line}">
+              <td th:text="${status.count}">idx</td>
+              <td th:text="*{productLine}">productLine</td>
+              <td th:text="*{textDescription}">textDescription</td>
+              <td th:text="*{htmlDescription}">htmlDescription</td>
+              <td th:text="*{image}">image</td>
+              <td>
+                <a class="btn btn-default" href="/productline/detail/0" th:href="@{/productline/detail/} + *{id}">detail</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- partial1 end -->
+    </div>
+
+  </div>
+  <!-- container -->
+
+</body>
+</html>
