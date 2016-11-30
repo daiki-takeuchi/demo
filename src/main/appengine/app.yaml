@@ -1,2 +1,6 @@
+runtime: custom
+vm: true
+
 env_variables:
-  SPRING_PROFILES_ACTIVE: 'production'
+  'DBG_ENABLE': 'true'
+  'SPRING_PROFILES_ACTIVE': 'production'

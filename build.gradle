@@ -40,3 +40,9 @@ dependencies {
 	compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
+bootRun {
+	if (project.hasProperty('args')) {    // "args" というプロパティが渡されていたら
+		args project.args.split('\\s+')   // 空白文字で split して、 run タスクの args オプションにセットする
+	}
+}
